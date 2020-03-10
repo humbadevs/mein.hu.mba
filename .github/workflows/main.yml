@@ -22,5 +22,5 @@ jobs:
           cd /home/humba/host/app/mein.hu.mba
           git pull
           npm i
-          pm2 restart mein.hu.mba
+          npm run build
           exit
