@@ -9,7 +9,7 @@ const state = user
 const actions = {
     login({ dispatch, commit }, { username, password }) {
         commit('loginRequest', { username });
-    
+
         userService.login(username, password)
             .then(
                 user => {
@@ -28,7 +28,7 @@ const actions = {
     },
     register({ dispatch, commit }, user) {
         commit('registerRequest', user);
-    
+
         userService.register(user)
             .then(
                 user => {
@@ -64,13 +64,13 @@ const mutations = {
         state.status = {};
         state.user = null;
     },
-    registerRequest(state, user) {
+    registerRequest(state, user) { // eslint-disable-line no-unused-vars
         state.status = { registering: true };
     },
-    registerSuccess(state, user) {
+    registerSuccess(state, user) { // eslint-disable-line no-unused-vars
         state.status = {};
     },
-    registerFailure(state, error) {
+    registerFailure(state, error) { // eslint-disable-line no-unused-vars
         state.status = {};
     }
 };

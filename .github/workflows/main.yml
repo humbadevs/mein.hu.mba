@@ -1,0 +1,26 @@
+name: APP Deploy and Execute
+on:
+  push:
+    branches: master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Node Setup
+      uses: actions/setup-node@v1.1.0
+    - name: Install packages
+      run: npm i
+    - name: Setup server
+      uses: appleboy/ssh-action@master
+      with:
+        host: server.max.berlin
+        username: humba
+        key: ${{ secrets.HUMBA_PRIVATE_SSH_KEY }}
+        port: 22
+        script: |
+          cd /home/humba/host/app/mein.hu.mba
+          git pull
+          npm i
+          pm2 restart mein.hu.mba
+          exit
