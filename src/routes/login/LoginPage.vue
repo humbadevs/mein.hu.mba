@@ -19,15 +19,9 @@
       <input type="hidden" name="remember" value="true" />
       <div class="rounded-md shadow-sm">
         <div>
-
           <input aria-label="Username" v-model="username" name="username" type="text" required :class="{ 'is-invalid': submitted && !username }"
             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5 form-input"
             placeholder="firstname.lastname" />
-          <div class="inline-block w-full text-center my-1 md:w-auto md:absolute inset-y-0 md:right-0 pr-3 md:flex items-center z-30 pointer-events-none">
-            <span class="text-gray-500 sm:text-sm sm:leading-5">
-              @humboldtschule-berlin.eu
-            </span>
-          </div>
         </div>
         <div class="-mt-px">
           <input aria-label="Password" v-model="password" name="password" type="password" required :class="{ 'is-invalid': submitted && !password }"
