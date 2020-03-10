@@ -1,8 +1,19 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import * as VeeValidate from 'vee-validate';
 
-Vue.config.productionTip = false
+import { store } from './_store';
+import { router } from './_helpers';
+import App from './app/App';
+
+Vue.use(VeeValidate);
+
+// setup fake backend
+import { configureFakeBackend } from './_helpers';
+configureFakeBackend();
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    el: '#app',
+    router,
+    store,
+    render: h => h(App)
+});
